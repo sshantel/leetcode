@@ -25,4 +25,4 @@ class Solution:
         merged_list.extend(new_nums_left)
         print(merged_list) 
 
-#     rotate([1,2,3,4,5,6,7], 3)
+    rotate([1,2,3,4,5,6,7], 3)
