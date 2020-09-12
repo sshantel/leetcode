@@ -11,7 +11,7 @@ Assume we are dealing with an environment which could only store integers within
 
 """
 
-def reverse(self, x: int) -> int:
+def reverse(x: int) -> int:
     y = str(abs(x))
     y = y.strip()
     y = y[::-1]
