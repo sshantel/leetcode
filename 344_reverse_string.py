@@ -5,3 +5,12 @@ Do not allocate extra space for another array, you must do this by modifying the
 
 You may assume all the characters consist of printable ascii characters.
 """
+ 
+def reverseString(s):
+        left, right = 0, len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left, right = left + 1, right - 1
+        return s
+
+print(reverseString(["h","e","l","l","o"]))
