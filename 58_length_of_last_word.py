@@ -10,7 +10,8 @@ Note: A word is defined as a maximal substring consisting of non-space character
 
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        s.split()
-        print(s)
+        poop = s.split()
+        last_poop = poop[-1]
+        print(len(last_poop))
 v = Solution()
 print(v.lengthOfLastWord('Hello World'))
