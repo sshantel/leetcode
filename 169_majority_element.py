@@ -18,7 +18,6 @@ def majorityElement(nums):
         print(f'value is {value}')
         if value > len(nums) / 2:
             return key
+ 
 
-    return -1 
-
-print(majorityElement([3,2]))
+print(majorityElement([3,2,3]))
