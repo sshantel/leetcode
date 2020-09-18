@@ -6,7 +6,7 @@ A defanged IP address replaces every period "." with "[.]".
 """
 
 
-def defangIPaddr(self, address: str) -> str:
+def defangIPaddr(address);
     defanged = ''
     for char in address:
         if char == '.':
