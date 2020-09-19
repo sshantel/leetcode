@@ -2,13 +2,13 @@
 Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 
 >>> 'Hello'
-hello
+'hello'
 
 >>> 'here'
-here
+'here'
 
 >>> 'LOVELY'
-lovely
+'lovely'
 
 
 """
