@@ -14,7 +14,7 @@ Implement function ToLowerCase() that has a string parameter str, and returns th
 """
 def toLowerCase(str):
     return str.lower()
-toLowerCase('Hello')
+print(toLowerCase('Hello'))
 
 if __name__ == "__main__":
     import doctest
