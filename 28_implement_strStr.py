@@ -6,13 +6,14 @@ Return the index of the first occurrence of needle in haystack, or -1 if needle 
 
 """
 
-def strStr(haystack, needle)
+def strStr(haystack, needle):
 
     if needle not in haystack:
         return -1
-    elif len(haystack) == 0 or len(needle) ==0:
+    elif len(haystack) == 0 or len(needle) == 0:
         return 0
     else:
+        print(haystack.index)
         return haystack.index(needle)
 print(strStr("hello", "ll"))
 print(strStr("aaaaa", "bba"))
