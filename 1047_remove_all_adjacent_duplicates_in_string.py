@@ -16,4 +16,4 @@ def removeDuplicates(S):
             stack.append(ch)
 
     return "".join(stack)
-removeDuplicates('abbaca')
+print(removeDuplicates('abbaca'))
