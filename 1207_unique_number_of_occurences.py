@@ -18,7 +18,7 @@ def uniqueOccurrences(arr):
             arr_dict[number] = 1
         else:
             arr_dict[number] += 1  
-    set_occur = set()
+    set_occur = set() 
     for count in arr_dict.values():
         if count in set_occur:
             return False
