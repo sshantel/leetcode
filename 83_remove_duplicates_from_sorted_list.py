@@ -9,6 +9,11 @@ Given a sorted linked list, delete all duplicates such that each element appear 
 
 """
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 def deleteDuplicates(head):
     current = head
     while head != None and current.next != None: 
