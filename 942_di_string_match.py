@@ -6,6 +6,16 @@ Return any permutation A of [0, 1, ..., N] such that for all i = 0, ..., N-1:
 If S[i] == "I", then A[i] < A[i+1]
 If S[i] == "D", then A[i] > A[i+1]
  
+
+>>> diStringMatch("IDID")
+[0, 4, 1, 3, 2]
+
+>>> diStringMatch("III")
+[0, 1, 2, 3]
+
+>>> diStringMatch("DDI")
+[3, 2, 0, 1]
+
 """
 
  
