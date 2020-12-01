@@ -25,3 +25,11 @@ def shortestDistance(words, word1, word2):
             distance = min(distance, idx - idx1)
 
     return distance
+
+
+if __name__ == "__main__":
+    import doctest
+
+    if doctest.testmod().failed == 0:
+        print("\n✨ ALL TESTS PASSED!\n")
+
