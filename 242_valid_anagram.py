@@ -1,10 +1,10 @@
 """
 Given two strings s and t , write a function to determine if t is an anagram of s.
 
-isAnagram('anagram', 'nagaram')
+<<< isAnagram('anagram', 'nagaram')
 True
 
-isAnagram('rat','car')
+<<< isAnagram('rat','car')
 False
 
 """

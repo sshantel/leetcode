@@ -7,7 +7,21 @@ Given a list of words and two words word1 and word2, return the shortest distanc
 <<< shortestDistance(["practice", "makes", "perfect", "coding", "makes"], 'makes', 'practice')
 3 
 
-""" 
+"""
+
+
 def shortestDistance(words, word1, word2):
 
- 
+    idx1 = -len(words)
+    idx2 = -len(words)
+    distance = len(words)
+
+    for idx, word in enumerate(words):
+        if word == word1:
+            idx1 = idx
+            distance = min(distance, idx - idx2)
+        elif word == word2:
+            idx2 = idx
+            distance = min(distance, idx - idx1)
+
+    return distance
