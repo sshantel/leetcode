@@ -13,23 +13,30 @@ Output: "BANC"
 
 def minWindow(s, t):
     #sliding window approach 
-    seen = {}
-    for letter in t:
-        if letter not in seen:
-            seen[letter] = 1
-        else:
-            seen[letter] += 1
+    def create_dict(s, t):
+        seen = {}
+        for letter in t:
+            if letter not in seen:
+                seen[letter] = 1
+            else:
+                seen[letter] += 1
+        return seen
     
-    left = 0
-    for right in range(len(s)):
-        print(seen)
-        if s[right] in seen:   
-            seen[s[right]] -= 1 
-            if seen[s[right]] < 1:
-                del seen[s[right]] 
-            
-            
-            
-    print(seen)
+    def sliding_window(s, t):
+        seen = create_dict(s,t) 
+        left = 0
+        length = []
+        length_count = 0
+        for right in range(len(s)): 
+            if s[right] in seen:   
+                seen[s[right]] -= 1 
+                if seen[s[right]] < 1:
+                    del seen[s[right]] 
+            if len(seen) == 0:
+                length.append([left, right])
+                length_count = right - left + 1 
+                left += 1
+        return length_count
+    return sliding_window(s,t)
 print(minWindow("ADOBECODEBANC", "ABC"))
         
