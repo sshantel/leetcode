@@ -11,7 +11,11 @@ import unittest
 
 class SimpleTest(unittest.TestCase):
     def test(self):
-        self.assertTrue(True)
+        self.assertEqual(isValid("()"), True)
+        self.assertEqual(isValid("()[]{}"), True)
+        self.assertEqual(isValid("(]"), False)
+        self.assertEqual(isValid("([)]"), False)
+        self.assertEqual(isValid("{[]}"), True)
         
 def isValid(s):
         #create hashmap of the matching brackets as key, value pairs
@@ -33,9 +37,7 @@ def isValid(s):
                 stack.pop()
             else:
                 return False
-        return stack == []
-print(isValid("()"))
-print(isValid("()"))
+        return stack == [] 
 
 if __name__ == '__main__':
     unittest.main()
