@@ -8,37 +8,48 @@ Example 1:
 Input: s = "ADOBECODEBANC", t = "ABC"
 Output: "BANC"
 """
-
-def minWindow(s, t):  
-    def create_dict(s, t):
-        seen = {}
-        for letter in t:
-            if letter not in seen:
-                seen[letter] = 1
-            else:
-                seen[letter] += 1
-        return seen
-    
-    def sliding_window(s, t):
-        left = 0
-        length = []
-        length_count = []
-        seen = create_dict(s,t) 
-        for right in range(len(s)):  
-            print(left, right)
-            if s[right] in seen:   
-                seen[s[right]] -= 1  
-                if seen[s[right]] < 1:
-                    del seen[s[right]] 
-                    if not seen: 
-                        print(f'left{left} right{right}')
-                        length.append([left, right])  
-                        length_count = right - left + 1  
-                        left = right
-                        seen = create_dict(s, t)
+from collections import defaultdict
+from math import inf
+def minimum_window_substring(s, t):
+  seen = {}
+  for char in t:
+    if char in seen:
+      seen[char] += 1
+    else:
+      seen[char] = 1
+  left = 0
+  result = [0, inf]
+  remaing_char = len(t)
+   
+  for right, right_elem in enumerate(s):
+    if right_elem in seen:
+      seen[right_elem] -= 1   
+      if seen[right_elem] >= 0:
+        remaing_char -= 1
+     
+    while remaing_char == 0:
+      if (result[1]-result[0]) > (right-left):
+        result[0] = left
+        result[1] = right
         
-                 
-        return length_count
-    return sliding_window(s,t)
-print(minWindow("ADOBECODEBANC", "ABC"))
+      if s[left] in seen:
+        seen[s[left]] += 1
+        if seen[s[left]] > 0: 
+          remaing_char += 1
+          
+      left += 1
+          
+  if result[1] == inf:
+    return ""
+  else:
+    return s[result[0]: result[1]+1]
+    
+s = "ADOBECODEBANC"
+t = "ABC"
+print(minimum_window_substring(s, t))
+
+
+  
+
+
         
